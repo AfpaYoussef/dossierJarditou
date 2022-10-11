@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="assets/css/style.css"> 
+    <title>Contact</title>
+</head>
+<body>
+    <header>
+        <div class="part1">
+            <img src="src/img/jarditou_logo.jpg" alt="Logo Jarditou" id="logo1">
+            <h1 id="slogan"> Tout le jardin</h1>
+        </div>
+        <nav class="container">
+            <div class="liste">
+                <ul>
+                    <li>
+                        <a class="lien1" href="index.html"> Accueil</a>
+                    </li>
+                    <li>
+                        <a class="lien1" href="tableau.html"> Tableau</a>
+                    </li>
+                    <li>
+                        <a class="lien1" href="contact.html"> Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </nav> 
+        <div>
+            <img id="logo2" src="/src/img/promotion.jpg" alt="promotion">
+        </div>
+             
+        
+    </header>
+
+    <div id="parent">
+        <form action="http://bienvu.net/script.php" method="GET" id="formulaire_contact">
+
+        <P>*Ces zones sont oblgatoires</P>
+        <fieldset>
+            <legend class="centrage">Vos coordonnées</legend>
+            <div><label for="nom">Votre nom* :</label><input type="text" name="nom" id="nom"></div>
+            <div><label for="prenom">Votre prénom* :</label><input type="text" name="prenom" id="prenom"></div>
+            <div><label for="sexe">Sexe*:</label><input type="radio" name="Sexe" id="sexe" value="Féminin"> Féminin<input type="radio" name="Sexe" value="Masculin"> Masculin</div>
+            <div><label for="date">Date de naissance*: </label><input type="date" name="date" id="date"></div>
+            <div><label for="code_postale">Code postale* :</label><input type="text" name="code_postale" id="code_postale" ></div>
+            <div><label for="adresse">Adresse* :</label><input type="text" name="adresse" id="adresse" ></div>
+            <div><label for="ville">Ville* :</label><input type="text" name="ville" id="ville"></div>
+            <div><label for="email">Email*: </label><input type="email" name="email" id="email"  placeholder="dave.loper@afpa.fr" pattern="^[a-z]+$" required title="dave.loper@afpa.fr"></div>
+        </fieldset>
+        <fieldset>
+            <legend class="centrage">Votre demande</legend>
+            <div><label for="Sujet">Sujet* :</label>
+                <input type="text" name="Sujet" id="Sujet" list="Sujet4" placeholder="Veuillez sélectionner un sujet" pattern="^[a-z]+$" required title="Veuillez sélectionner un sujet">
+                <datalist id="Sujet4">
+                    <option value="Mes commandes">
+                    <option value="Question sur un produit">
+                    <option value="Réclamation">
+                    <option value="Autres">
+                </datalist></div>
+            <div>
+                <label for="nom">Votre question* :</label><textarea name="commentaire" rows="1" cols="20"></textarea>
+            </div>
+
+
+            <div>
+                <input type="checkbox" name="text" value=" * J'accepte le traitement informatique de ce formulaire"> * J'accepte le traitement informatique de ce formulaire</div>
+
+        </fieldset>
+        <div>
+            <input type="submit" value="Envoyer"><input type="submit" value="Annuler">
+        </div>
+   
+      </form>
+</div>
+
+<hr>
+<footer class="container">
+    <div class="liste">
+        <ul>
+            <li>
+                <a class="lien1" href="#"> Mentions légales</a>
+            </li>
+            <li>
+                <a class="lien1" href="#"> Horaires</a>
+            </li>
+            <li>
+                <a class="lien1" href="#"> Plan du site</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+
+    
+</body>
+</html>
