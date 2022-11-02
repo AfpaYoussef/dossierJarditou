@@ -38,13 +38,13 @@
     </header>
 
     <div id="parent">
-        <form action="http://bienvu.net/script.php" method="GET" id="formulaire_contact">
+        <form action="http://bienvu.net/script.php" method="post" id="formulaire_contact" name="form3">
 
         <P>*Ces zones sont oblgatoires</P>
         <fieldset>
             <legend class="centrage">Vos coordonnées</legend>
-            <div><label for="nom">Votre nom* :</label><input type="text" name="nom" id="nom"></div>
-            <div><label for="prenom">Votre prénom* :</label><input type="text" name="prenom" id="prenom"></div>
+            <div><label for="nom">Votre nom* :</label><input type="text" name="nom" id="nom" value=""></div>
+            <div><label for="prenom">Votre prénom* :</label><input type="text" name="prenom" id="prenom" value=""></div>
             <div><label for="sexe">Sexe*:</label><input type="radio" name="Sexe" id="sexe" value="Féminin"> Féminin<input type="radio" name="Sexe" value="Masculin"> Masculin</div>
             <div><label for="date">Date de naissance*: </label><input type="date" name="date" id="date"></div>
             <div><label for="code_postale">Code postale* :</label><input type="text" name="code_postale" id="code_postale" ></div>
@@ -63,16 +63,16 @@
                     <option value="Autres">
                 </datalist></div>
             <div>
-                <label for="nom">Votre question* :</label><textarea name="commentaire" rows="1" cols="20"></textarea>
+                <label for="nom">Votre question* :</label><textarea name="commentaire" rows="1" cols="20" id="question"></textarea>
             </div>
 
 
             <div>
-                <input type="checkbox" name="text" value=" * J'accepte le traitement informatique de ce formulaire"> * J'accepte le traitement informatique de ce formulaire</div>
+                <input type="checkbox" name="text" value=" * J'accepte le traitement informatique de ce formulaire" id="traitementinfo"> * J'accepte le traitement informatique de ce formulaire</div>
 
         </fieldset>
         <div>
-            <input type="submit" value="Envoyer"><input type="submit" value="Annuler">
+            <input type="submit" value="Envoyer" id="cliquons"><input type="submit" value="Annuler">
         </div>
    
       </form>
@@ -96,6 +96,6 @@
 </footer>
 
 
-    <script src =/assets/js/scriptcontact.js></script>
+    <script src =assets/js/scriptcontact.js></script>
 </body>
 </html>
