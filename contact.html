@@ -43,38 +43,37 @@
         <P>*Ces zones sont oblgatoires</P>
         <fieldset>
             <legend class="centrage">Vos coordonnées</legend>
-            <div><label for="nom">Votre nom* :</label><input type="text" name="nom" id="nom" value=""></div>
-            <div><label for="prenom">Votre prénom* :</label><input type="text" name="prenom" id="prenom" value=""></div>
-            <div><label for="sexe">Sexe*:</label><input type="radio" name="Sexe" id="sexe" value="Féminin"> Féminin<input type="radio" name="Sexe" value="Masculin"> Masculin</div>
-            <div><label for="date">Date de naissance*: </label><input type="date" name="date" id="date"></div>
-            <div><label for="code_postale">Code postale* :</label><input type="text" name="code_postale" id="code_postale" ></div>
-            <div><label for="adresse">Adresse* :</label><input type="text" name="adresse" id="adresse" ></div>
-            <div><label for="ville">Ville* :</label><input type="text" name="ville" id="ville"></div>
-            <div><label for="email">Email*: </label><input type="email" name="email" id="email"  placeholder="dave.loper@afpa.fr" pattern="^[a-z]+$" required title="dave.loper@afpa.fr"></div>
+            <div><label for="nom">Votre nom* :</label><input type="text" name="nom" id="nom" value=""><p style="color: orangered;" id="erreur1"></p></div>
+            <div><label for="prenom">Votre prénom* :</label><input type="text" name="prenom" id="prenom" value=""><p style="color: orangered;" id="erreur2"></p></div>
+            <div><label for="sexe" >Sexe*:</label><input type="radio" name="Sexe" value="Féminin" id="sexe1"> Féminin<input type="radio" name="Sexe" value="Masculin" id="sexe2"> Masculin</div><p style="color: orangered;" id="erreur3"></p>
+            <div><label for="date">Date de naissance*: </label><input type="date" name="date" id="date"><p style="color: orangered;" id="erreur4"></p></div>
+            <div><label for="code_postale">Code postale* :</label><input type="text" name="code_postale" id="code_postale" ><p style="color: orangered;" id="erreur5"></p><p style="color: orangered;" id="erreur6"></p></div>
+            <div><label for="adresse">Adresse* :</label><input type="text" name="adresse" id="adresse" ><p style="color: orangered;" id="erreur7"></p></div>
+            <div><label for="ville">Ville* :</label><input type="text" name="ville" id="ville"><p style="color: orangered;" id="erreur8"><p style="color: orangered;" id="erreur9"></p></p></div>
+            <div><label for="email">Email*: </label><input type="email" name="email" id="email"  placeholder="dave.loper@afpa.fr" pattern="^[a-z]+$" required title="dave.loper@afpa.fr"><p style="color: orangered;" id="erreur10"><p style="color: orangered;" id="erreur11"></p></p></div>
         </fieldset>
         <fieldset>
             <legend class="centrage">Votre demande</legend>
             <div><label for="Sujet">Sujet* :</label>
-                <input type="text" name="Sujet" id="Sujet" list="Sujet4" placeholder="Veuillez sélectionner un sujet" pattern="^[a-z]+$" required title="Veuillez sélectionner un sujet">
-                <datalist id="Sujet4">
-                    <option value="Mes commandes">
-                    <option value="Question sur un produit">
-                    <option value="Réclamation">
-                    <option value="Autres">
-                </datalist></div>
+                <select name="Sujet" size="1" id="Sujet">
+                    <option value="" selected>Veuillez sélectionner un sujet</option>
+                    <option value="Mes commandes">Mes commandes</option>
+                    <option value="Question sur un produit">Question sur un produit</option>
+                    <option value="Réclamation">Réclamation</option>
+                    <option value="Autres">Autres</option>
+                </select><p style="color: orangered;" id="erreur12"></p>
+                </div>
             <div>
-                <label for="nom">Votre question* :</label><textarea name="commentaire" rows="1" cols="20" id="question"></textarea>
+                <label for="nom">Votre question* :</label><textarea name="commentaire" rows="1" cols="20" id="question"></textarea><p style="color: orangered;" id="erreur13"></p>
             </div>
 
 
             <div>
-                <input type="checkbox" name="text" value=" * J'accepte le traitement informatique de ce formulaire" id="traitementinfo"> * J'accepte le traitement informatique de ce formulaire</div>
-
+                <input type="checkbox" name="text" value=" * J'accepte le traitement informatique de ce formulaire" id="traitementinfo"> * J'accepte le traitement informatique de ce formulaire<p style="color: orangered;" id="erreur14"></p></div>
         </fieldset>
         <div>
             <input type="submit" value="Envoyer" id="cliquons"><input type="submit" value="Annuler">
         </div>
-   
       </form>
 </div>
 
@@ -94,7 +93,6 @@
         </ul>
     </div>
 </footer>
-
 
     <script src =assets/js/scriptcontact.js></script>
 </body>
