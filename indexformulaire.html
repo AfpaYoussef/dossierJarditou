@@ -43,14 +43,14 @@
         <P>*Ces zones sont oblgatoires</P>
         <fieldset>
             <legend class="centrage">Vos coordonnées</legend>
-            <div><label for="nom">Votre nom* :</label><input type="text" name="nom" id="nom" value="" required ="required"><span id="nom_manquant"></span></div>
-            <div><label for="prenom">Votre prénom* :</label><input type="text" name="prenom" id="prenom" value="" required ="required"><span id="prenom_manquant"></span></div>
-            <div><label for="sexe" >Sexe*:</label><input type="radio" name="Sexe" value="Féminin" id="sexe1" > Féminin<input type="radio" name="Sexe" value="Masculin" id="sexe2"> Masculin <span id="sexe_manquant"></span></div>
-            <div><label for="date">Date de naissance*: </label><input type="date" name="date" id="date1" required ="required"><span id="date_manquant"></span></div>
-            <div><label for="code_postale">Code postal* :</label><input type="text" name="code_postale" id="code_postale" required ="required"><span id="codep_manquant"></span></div>
-            <div><label for="adresse">Adresse* :</label><input type="text" name="adresse" id="adresse" required ="required"><span id="adresse_manquante"></span></div>
-            <div><label for="ville">Ville* :</label><input type="text" name="ville" id="ville" required ="required"><span id="ville_manquante"></span></div>
-            <div><label for="email">Email*: </label><input type="email" name="email" id="email"  placeholder="dave.loper@afpa.fr" pattern="^[a-z]+$" required title="dave.loper@afpa.fr" required ="required"><span id="email_manquant"></span></div>
+            <div><label for="nom">Votre nom* :</label><input type="text" name="nom" id="nom" value="" required ="required" maxlength="20"></br><span id="nom_manquant"></span></div>
+            <div><label for="prenom">Votre prénom* :</label><input type="text" name="prenom" id="prenom" value="" required ="required"></br><span id="prenom_manquant"></span></div>
+            <div><label for="sexe" >Sexe*:</label><input type="radio" name="Sexe" value="Féminin" id="sexe1" > Féminin<input type="radio" name="Sexe" value="Masculin" id="sexe2"> Masculin </br><span id="sexe_manquant"></span></div>
+            <div><label for="date">Date de naissance*: </label><input type="date" name="date" id="date1" required ="required"></br><span id="date_manquant"></span></div>
+            <div><label for="code_postale">Code postal* :</label><input type="text" name="code_postale" id="code_postale" required ="required"></br><span id="codep_manquant"></span></div>
+            <div><label for="adresse">Adresse* :</label><input type="text" name="adresse" id="adresse" required ="required"></br><span id="adresse_manquante"></span></div>
+            <div><label for="ville">Ville* :</label><input type="text" name="ville" id="ville" required ="required"></br><span id="ville_manquante"></span></div>
+            <div><label for="email">Email*: </label><input type="email" name="email" id="email"  placeholder="dave.loper@afpa.fr" pattern="^[a-z]+$" required title="dave.loper@afpa.fr" required ="required"></br><span id="email_manquant"></span></div>
         </fieldset>
         <fieldset>
             <legend class="centrage">Votre demande</legend>
@@ -61,15 +61,15 @@
                     <option value="Question sur un produit">Question sur un produit</option>
                     <option value="Réclamation">Réclamation</option>
                     <option value="Autres">Autres</option>
-                </select><span id="sujet_manquant"></span>
+                </select></br><span id="sujet_manquant"></span>
                 </div>
             <div>
-                <label for="nom">Votre question* :</label><textarea name="commentaire" rows="1" cols="20" id="question" required ="required"></textarea><span id="question_manquante"></span>
+                <label for="nom">Votre question* :</label><textarea name="commentaire" rows="1" cols="20" id="question" required ="required"></textarea></br><span id="question_manquante"></span>
             </div>
 
 
             <div>
-                <input type="checkbox" name="text" value=" * J'accepte le traitement informatique de ce formulaire" id="traitementinfo" required ="required"> * J'accepte le traitement informatique de ce formulaire<span id="traitement_manquant"></span></div>
+                <input type="checkbox" name="text" value=" * J'accepte le traitement informatique de ce formulaire" id="traitementinfo" required ="required"> * J'accepte le traitement informatique de ce formulaire</br><span id="traitement_manquant"></span></div>
         </fieldset>
         <div>
             <input type="submit" value="Envoyer" id="cliquons"><input type="submit" value="Annuler">

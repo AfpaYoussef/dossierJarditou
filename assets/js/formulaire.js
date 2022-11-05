@@ -1,12 +1,14 @@
+// <---------Variables ----------------->
+
 var validation = document.getElementById ("cliquons");
 
 var nom = document.getElementById ("nom");
 var nom_m = document.getElementById ("nom_manquant");
-var nom_v = ("^[a-z]+[ \-']?[[a-z]+[ \-']?]*[a-z]+$", "gi");
+var nom_v = /[^ ][a-zA-Z '\-éèêëçäà]*[^ ]$/;
 
 var prenom = document.getElementById ("prenom");
 var prenom_m = document.getElementById ("prenom_manquant");
-var prenom_v = ("^[a-z]+[ \-']?[[a-z]+[ \-']?]*[a-z]+$", "gi");
+var prenom_v = /^[a-zA-Z '.-]*$/;
 
 var sexe1 = document.getElementById ("sexe1");
 var sexe2 = document.getElementById ("sexe2");
@@ -14,18 +16,24 @@ var sexe_m = document.getElementById ("sexe_manquant");
 
 var date1 = document.getElementById ("date1");
 var date_m = document.getElementById ("date_manquant");
+var date_v= /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+
+
 
 var codep = document.getElementById ("code_postale");
 var codep_m = document.getElementById ("codep_manquant");
+var codep_v = /^(([0-8][0-9])|(9[0-5])|(2[ab]))[0-9]{3}$/;
 
 var adresse = document.getElementById ("adresse");
 var adresse_m = document.getElementById ("adresse_manquante");
 
 var ville = document.getElementById ("ville");
 var ville_m = document.getElementById ("ville_manquante");
+var ville_v = /^[a-zA-Z]/;
 
 var email = document.getElementById ("email");
 var email_m = document.getElementById ("email_manquant");
+var email_v = /[a-z0-9!#$%&’*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&’*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 
 var sujet = document.getElementById ("Sujet");
 var sujet_m = document.getElementById ("sujet_manquant");
@@ -36,12 +44,15 @@ var question_m = document.getElementById ("question_manquante");
 var traitementinfo = document.getElementById ("traitementinfo");
 var traitementinfo_m = document.getElementById ("traitement_manquant");
 
+// preventDefault va permettre de bloquer l'envoi des données si la vérification préalable (ou condition "if"), via les propriétés validity et valueMissing, est vérifiée
+// La vérification va s'opérer en appelant les variables contenant les regex, spécifiquement créée pour les données sollicitées à l'utilisateur.
+
 
 
 function validationform (e)  { 
 
     if (nom.validity.valueMissing) { 
-        e.preventDefault();
+        e.preventDefault();      
         nom_m.textContent = "Nom manquant";
         nom_m.style.color = "red";
    
@@ -81,14 +92,25 @@ function validationform (e)  {
         date_m.style.color = "red";
     }
 
+    else if (date_v.test(date.value) == false) {
+        e.preventDefault ();
+        date_m.textContent = "Format incorrect";
+        date_m.style.color = "orange";
+    }    
+    
 
     if (codep.validity.valueMissing) {
         e.preventDefault();
         codep_m.textContent = "Code postal manquant";
         codep_m.style.color = "red";
     }
-
-
+    
+    else if (codep_v.test(code_postale.value) == false) {
+        e.preventDefault ();
+        codep_m.textContent = "Format incorrect";
+        codep_m.style.color = "orange";
+    }    
+    
 
     if (adresse.validity.valueMissing) {
         e.preventDefault();
@@ -102,11 +124,25 @@ function validationform (e)  {
         ville_m.style.color = "red";
     }
 
+    else if (ville_v.test(ville.value) == false) {
+        e.preventDefault ();
+        ville_m.textContent = "Format incorrect";
+        ville_m.style.color = "orange";
+    }    
+    
+
     if (email.validity.valueMissing) {
         e.preventDefault();
         email_m.textContent = "Email manquant";
         email_m.style.color = "red";
     }
+
+    else if (email_v.test(email.value) == false) {
+        e.preventDefault ();
+        email_m.textContent = "Format incorrect";
+        email_m.style.color = "orange";
+    }    
+
 
     if (sujet.validity.valueMissing) {
         e.preventDefault();
@@ -128,5 +164,7 @@ function validationform (e)  {
 
 
 }
+
+// <---------addEventListener permet de lier l'exécution de la fonction par l'intermédiaire de l'action du "click" sur le bouton submit 
 
 validation.addEventListener("click", validationform);
