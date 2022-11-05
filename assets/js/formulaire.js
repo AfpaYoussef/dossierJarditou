@@ -16,9 +16,7 @@ var sexe_m = document.getElementById ("sexe_manquant");
 
 var date1 = document.getElementById ("date1");
 var date_m = document.getElementById ("date_manquant");
-var date_v= /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-
-
+var date_v = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
 
 var codep = document.getElementById ("code_postale");
 var codep_m = document.getElementById ("codep_manquant");
@@ -33,7 +31,7 @@ var ville_v = /^[a-zA-Z]/;
 
 var email = document.getElementById ("email");
 var email_m = document.getElementById ("email_manquant");
-var email_v = /[a-z0-9!#$%&’*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&’*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+var email_v = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
 
 var sujet = document.getElementById ("Sujet");
 var sujet_m = document.getElementById ("sujet_manquant");
@@ -44,7 +42,7 @@ var question_m = document.getElementById ("question_manquante");
 var traitementinfo = document.getElementById ("traitementinfo");
 var traitementinfo_m = document.getElementById ("traitement_manquant");
 
-// preventDefault va permettre de bloquer l'envoi des données si la vérification préalable (ou condition "if"), via les propriétés validity et valueMissing, est vérifiée
+// preventDefault va permettre de bloquer l'envoi des données si la vérification préalable (ou condition "if"), via les propriétés validity, valueMissing et la méthode test, est vérifiée
 // La vérification va s'opérer en appelant les variables contenant les regex, spécifiquement créée pour les données sollicitées à l'utilisateur.
 
 
@@ -79,7 +77,7 @@ function validationform (e)  {
       
     }
 
-    if (((sexe1.checked)==false) && ((sexe2.checked)==false)) {
+    if (((sexe1.checked) == false) && ((sexe2.checked) == false)) {
         e.preventDefault();
         sexe_m.textContent = "Sexe manquant";
         sexe_m.style.color = "red";
@@ -92,8 +90,8 @@ function validationform (e)  {
         date_m.style.color = "red";
     }
 
-    else if (date_v.test(date.value) == false) {
-        e.preventDefault ();
+    else if (date_v.test(date1.value) == false) {
+        e.preventDefault();
         date_m.textContent = "Format incorrect";
         date_m.style.color = "orange";
     }    
