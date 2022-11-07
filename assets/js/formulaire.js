@@ -16,7 +16,7 @@ var sexe_m = document.getElementById ("sexe_manquant");
 
 var date1 = document.getElementById ("date1");
 var date_m = document.getElementById ("date_manquant");
-var date_v = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+var date_v = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/;
 
 var codep = document.getElementById ("code_postale");
 var codep_m = document.getElementById ("codep_manquant");
@@ -43,60 +43,59 @@ var traitementinfo = document.getElementById ("traitementinfo");
 var traitementinfo_m = document.getElementById ("traitement_manquant");
 
 // preventDefault va permettre de bloquer l'envoi des données si la vérification préalable (ou condition "if"), via les propriétés validity, valueMissing et la méthode test, est vérifiée
-// La vérification va s'opérer en appelant les variables contenant les regex, spécifiquement créée pour les données sollicitées à l'utilisateur.
-
+// La vérification va s'opérer en appelant les variables contenant les regex, spécifiquement créées pour les données sollicitées à l'utilisateur.
 
 
 function validationform (e)  { 
-
+    
     if (nom.validity.valueMissing) { 
         e.preventDefault();      
         nom_m.textContent = "Nom manquant";
         nom_m.style.color = "red";
-   
+        
     }
-     
-     else if (nom_v.test(nom.value) == false) {
+    
+    else if (nom_v.test(nom.value) == false) {
         e.preventDefault ();
         nom_m.textContent = "Format incorrect";
         nom_m.style.color = "orange";
     }  
-
-
+    
+    
     if (prenom.validity.valueMissing) { 
-       e.preventDefault();
-       prenom_m.textContent = "Prénom manquant";
-       prenom_m.style.color = "red";
-  
+        e.preventDefault();
+        prenom_m.textContent = "Prénom manquant";
+        prenom_m.style.color = "red";
+        
     }
     
     else if (prenom_v.test(prenom.value) == false) {
-       e.preventDefault ();
-       prenom_m.textContent = "Format incorrect";
-       prenom_m.style.color = "orange";
-      
+        e.preventDefault ();
+        prenom_m.textContent = "Format incorrect";
+        prenom_m.style.color = "orange";
+        
     }
-
+    
     if (((sexe1.checked) == false) && ((sexe2.checked) == false)) {
         e.preventDefault();
         sexe_m.textContent = "Sexe manquant";
         sexe_m.style.color = "red";
-       
+        
     }
-
+    
     if (date1.validity.valueMissing) {
         e.preventDefault();
         date_m.textContent = "Date de naissance manquante";
         date_m.style.color = "red";
     }
-
+    
     else if (date_v.test(date1.value) == false) {
         e.preventDefault();
         date_m.textContent = "Format incorrect";
         date_m.style.color = "orange";
     }    
     
-
+    
     if (codep.validity.valueMissing) {
         e.preventDefault();
         codep_m.textContent = "Code postal manquant";
@@ -109,60 +108,60 @@ function validationform (e)  {
         codep_m.style.color = "orange";
     }    
     
-
+    
     if (adresse.validity.valueMissing) {
         e.preventDefault();
         adresse_m.textContent = "Adresse manquante";
         adresse_m.style.color = "red";
     }
-
+    
     if (ville.validity.valueMissing) {
         e.preventDefault();
         ville_m.textContent = "Ville manquante";
         ville_m.style.color = "red";
     }
-
+    
     else if (ville_v.test(ville.value) == false) {
         e.preventDefault ();
         ville_m.textContent = "Format incorrect";
         ville_m.style.color = "orange";
     }    
     
-
+    
     if (email.validity.valueMissing) {
         e.preventDefault();
         email_m.textContent = "Email manquant";
         email_m.style.color = "red";
     }
-
+    
     else if (email_v.test(email.value) == false) {
         e.preventDefault ();
         email_m.textContent = "Format incorrect";
         email_m.style.color = "orange";
     }    
-
-
+    
+    
     if (sujet.validity.valueMissing) {
         e.preventDefault();
         sujet_m.textContent = "Sujet manquant";
         sujet_m.style.color = "red";
     }
-
+    
     if (question.validity.valueMissing) {
         e.preventDefault();
         question_m.textContent = "Question manquante";
         question_m.style.color = "red";
     }
-
+    
     if (traitementinfo.validity.valueMissing) {
         e.preventDefault();
         traitementinfo_m.textContent = "Veuillez cocher la case";
         traitementinfo_m.style.color = "red";
     }
-
-
+    
+    
 }
 
-// <---------addEventListener permet de lier l'exécution de la fonction par l'intermédiaire de l'action du "click" sur le bouton submit 
+// <---------addEventListener permet de lier l'exécution de la fonction à l'action du "click" sur le bouton submit ------>
 
 validation.addEventListener("click", validationform);
