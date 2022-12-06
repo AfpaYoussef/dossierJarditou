@@ -1,7 +1,7 @@
 /* index*/ 
-body {
+/* body {
     background-color: aquamarine;
-}
+} */
 #slogan {
     width:100%;
 }
@@ -84,9 +84,9 @@ footer {
     margin: 90px auto;
 }
  
-thead {
+/* thead {
     background-color: green;;
-}
+} */
 
 thead, tr{
     text-align: left;
@@ -102,9 +102,9 @@ tbody, tr, th, td {
    border: 2px solid skyblue;
 }
 
-tbody {
+/* tbody {
     background-color: lightgreen;
-}
+} */
 
 .taille {
     width: 100px;
@@ -171,3 +171,4 @@ tbody {
     #parent {
         width: auto;
     }
+}
