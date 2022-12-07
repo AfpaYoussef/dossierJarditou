@@ -56,14 +56,14 @@
         <P>*Ces zones sont oblgatoires</P>
         <fieldset>
             <legend class="centrage">Vos coordonnées</legend>
-            <div><label for="nom">Votre nom* :</label><input type="text" name="nom" id="nom" value="" placeholder="Veuillez saisir votre nom"required ="required" maxlength="20"></br><span id="nom_manquant"></span></div>
-            <div><label for="prenom">Votre prénom* :</label><input type="text" name="prenom" id="prenom" value="" placeholder="Veuillez saisir votre prénom" required ="required"></br><span id="prenom_manquant"></span></div>
+            <div><label for="nom">Votre nom* :</label><input type="text" name="nom" id="nom" value="" placeholder="Veuillez saisir votre nom"required ="required" class="w-100 col-12" maxlength="20"></br><span id="nom_manquant"></span></div>
+            <div><label for="prenom">Votre prénom* :</label><input type="text" name="prenom" id="prenom" value="" placeholder="Veuillez saisir votre prénom" required ="required" class="w-100 col-12"></br><span id="prenom_manquant"></span></div>
             <div><label for="sexe" >Sexe*:</label><input type="radio" name="Sexe" value="Féminin" id="sexe1" > Féminin<input type="radio" name="Sexe" value="Masculin" id="sexe2"> Masculin </br><span id="sexe_manquant"></span></div>
-            <div><label for="date">Date de naissance*: </label><input type="date" name="date" id="date1" required ="required"></br><span id="date_manquant"></span></div>
-            <div><label for="code_postale">Code postal* :</label><input type="text" name="code_postale" id="code_postale" required ="required"></br><span id="codep_manquant"></span></div>
-            <div><label for="adresse">Adresse* :</label><input type="text" name="adresse" id="adresse" required ="required"></br><span id="adresse_manquante"></span></div>
-            <div><label for="ville">Ville* :</label><input type="text" name="ville" id="ville" required ="required"></br><span id="ville_manquante"></span></div>
-            <div><label for="email">Email*: </label><input type="email" name="email" id="email"  placeholder="dave.loper@afpa.fr" pattern="^[a-z]+$" required title="dave.loper@afpa.fr" required ="required"></br><span id="email_manquant"></span></div>
+            <div><label for="date">Date de naissance*: </label><input type="date" name="date" id="date1" required ="required" class="w-100 col-12"></br><span id="date_manquant"></span></div>
+            <div><label for="code_postale">Code postal* :</label><input type="text" name="code_postale" id="code_postale" required ="required" class="w-100 col-12"></br><span id="codep_manquant"></span></div>
+            <div><label for="adresse">Adresse* :</label><input type="text" name="adresse" id="adresse" required ="required" class="w-100 col-12"></br><span id="adresse_manquante"></span></div>
+            <div><label for="ville">Ville* :</label><input type="text" name="ville" id="ville" required ="required" class="w-100 col-12"></br><span id="ville_manquante"></span></div>
+            <div><label for="email">Email*: </label><input type="email" name="email" id="email"  placeholder="dave.loper@afpa.fr" class="w-100 col-12" pattern="^[a-z]+$" required title="dave.loper@afpa.fr" required ="required"></br><span id="email_manquant"></span></div>
         </fieldset>
         <fieldset>
             <legend class="centrage">Votre demande</legend>
@@ -77,7 +77,7 @@
                 </select></br><span id="sujet_manquant"></span>
                 </div>
             <div>
-                <label for="nom">Votre question* :</label><textarea name="commentaire" rows="1" cols="20" id="question" required ="required"></textarea></br><span id="question_manquante"></span>
+                <label for="nom">Votre question* :</label><textarea name="commentaire" class="w-100 col-12" rows="1" cols="20" id="question" required ="required"></textarea></br><span id="question_manquante"></span>
             </div>
 
 
